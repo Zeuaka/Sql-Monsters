@@ -48,10 +48,8 @@ CREATE TABLE edges (
     from_point_id INTEGER NOT NULL REFERENCES points(id) ON DELETE CASCADE,
     to_point_id INTEGER NOT NULL REFERENCES points(id) ON DELETE CASCADE,
     distance_meters DECIMAL(10, 2) NOT NULL CHECK (distance_meters > 0),
-    duration_minutes DECIMAL(5, 2) NOT NULL CHECK (duration_minutes >= 0),
     direction_text VARCHAR(255),
     floor_transition BOOLEAN DEFAULT FALSE,
-    is_bidirectional BOOLEAN DEFAULT TRUE,
     UNIQUE(from_point_id, to_point_id)
 );
 
