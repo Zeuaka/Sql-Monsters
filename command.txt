@@ -1,0 +1,15 @@
+SELECT '(' || id || ', ' || building_id || ', ' || floor_id || ', ' || type || ', ' 
+       || '''' || name || ''', ' || x_coord || ', ' || y_coord || ', ' 
+       || COALESCE('''' || description || '''', 'NULL') || ', ' 
+       || COALESCE(panorama_id::text, 'NULL') || ', ' || is_active || '),'
+FROM points 
+WHERE building_id = 1
+ORDER BY id;
+
+
+
+SELECT 'INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_text, floor_transition) VALUES (' 
+       || id || ', ' || from_point_id || ', ' || to_point_id || ', ' || distance_meters || ', ' 
+       || COALESCE('''' || direction_text || '''', 'NULL') || ', ' || floor_transition || ');'
+FROM edges 
+WHERE from_point_id IN (SELECT id FROM points WHERE building_id = 1);
