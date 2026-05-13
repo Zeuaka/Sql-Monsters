@@ -1,3 +1,5 @@
 *.exe filter=lfs diff=lfs merge=lfs -text
 *.AppImage filter=lfs diff=lfs merge=lfs -text
 *.rpm filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+Исходники[[:space:]]lizserg-edit(1.0.1).zip filter=lfs diff=lfs merge=lfs -text
