@@ -1,4 +1,4 @@
--- ТОЧКИ
+--=== 10 корпус СПОРТ===
 INSERT INTO points (id, building_id, floor_id, type, name, x_coord, y_coord, description, panorama_id, is_active) VALUES 
 -- 1 этаж
 (1001018, 10, 33, 1, 'Аудитория 111(10)', 70, 69.92, '', NULL, true),
