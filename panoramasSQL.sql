@@ -1,3 +1,4 @@
+-- ========== 1 корпус панорамы ===========
 INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch) VALUES
 (200015, 101001, '/panoramas/1.1.10.jpg', 'Коридор к лестнице 5', '', 0, 0),
 (200016, 101006, '/panoramas/1.1.2.jpg', 'Банкоматы', '', 0, 0),
