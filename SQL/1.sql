@@ -1,3 +1,4 @@
+-- ============== 1 корпус ===========
 INSERT INTO points (id, building_id, floor_id, type, name, x_coord, y_coord, description, panorama_id, is_active) VALUES
 -- ========== КОРПУС 1 (1 этаж) ==========
 (101001, 1, 45, 3, '', 26.91, 13.21, '', NULL, true),
