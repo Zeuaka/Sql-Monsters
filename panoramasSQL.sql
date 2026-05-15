@@ -36,7 +36,20 @@ INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch)
 (1990049, 11318, '/panoramas/1.3.5.jpg', 'Холл', '', 0, 0),
 (1990050, 11405, '/panoramas/1.3.6.jpg', 'Коридор', '', 0, 0),
 (1990051, 11317, '/panoramas/1.3.л4.jpg', 'Коридор', '', 0, 0),
-(1990052, 11323, '/panoramas/1.3.7.jpg', 'Коридор', '', 0, 0)
+(1990052, 11323, '/panoramas/1.3.7.jpg', 'Коридор', '', 0, 0),
+(1990053, 11422, '/panoramas/1.4.1.jpg', 'Холл', '', 0, 0),
+(1990054, 11488, '/panoramas/1.4.2.jpg', 'Коридор', '', 0, 0),
+(1990055, 11493, '/panoramas/1.4.3.jpg', 'Коридор', '', 0, 0),
+(1990056, 11421, '/panoramas/1.4.4.jpg', 'Холл', '', 0, 0),
+(1990057, 11420, '/panoramas/1.4.5.jpg', 'Коридор', '', 0, 0),
+(1990058, 11419, '/panoramas/1.4.6.jpg', 'У лестницы', '', 0, 0),
+(1990059, 11477, '/panoramas/1.4.7.jpg', 'Коридор', '', 0, 0),
+(1990060, 11425, '/panoramas/1.4.8.jpg', 'Коридор', '', 0, 0),
+(1990061, 11416, '/panoramas/1.4.л4.jpg', 'Лестница', '', 0, 0),
+(1990062, 11415, '/panoramas/1.4.л2.jpg', 'Главная лестница', '', 0, 0),
+(1990063, 11417, '/panoramas/1.4.л1.jpg', 'Главная лестница', '', 0, 0),
+(1990064, 11418, '/panoramas/1.4.л3.jpg', 'Лестница', '', 0, 0)
+
 ON CONFLICT (id) DO NOTHING;
 
 UPDATE points SET panorama_id = 200015 WHERE id = 101001;
@@ -77,3 +90,15 @@ UPDATE points SET panorama_id = 1990049 WHERE id = 11318;
 UPDATE points SET panorama_id = 1990050 WHERE id = 11405;
 UPDATE points SET panorama_id = 1990051 WHERE id = 11317;
 UPDATE points SET panorama_id = 1990052 WHERE id = 11323;
+UPDATE points SET panorama_id = 1990053 WHERE id = 11422;
+UPDATE points SET panorama_id = 1990054 WHERE id = 11488;
+UPDATE points SET panorama_id = 1990055 WHERE id = 11493;
+UPDATE points SET panorama_id = 1990056 WHERE id = 11421;
+UPDATE points SET panorama_id = 1990057 WHERE id = 11420;
+UPDATE points SET panorama_id = 1990058 WHERE id = 11419;
+UPDATE points SET panorama_id = 1990059 WHERE id = 11477;
+UPDATE points SET panorama_id = 1990060 WHERE id = 11425;
+UPDATE points SET panorama_id = 1990061 WHERE id = 11416;
+UPDATE points SET panorama_id = 1990062 WHERE id = 11415;
+UPDATE points SET panorama_id = 1990063 WHERE id = 11417;
+UPDATE points SET panorama_id = 1990064 WHERE id = 11418;
