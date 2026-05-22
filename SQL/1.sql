@@ -1,4 +1,4 @@
--- ============== 1 корпус ===========
+-- ========== КОРПУС 1 ==========
 INSERT INTO points (id, building_id, floor_id, type, name, x_coord, y_coord, description, panorama_id, is_active) VALUES
 -- ========== КОРПУС 1 (1 этаж) ==========
 (101001, 1, 45, 3, '', 26.91, 13.21, '', NULL, true),
@@ -309,6 +309,7 @@ INSERT INTO points (id, building_id, floor_id, type, name, x_coord, y_coord, des
 (11412, 1, 47, 3, '', 148.00, 246.00, '', NULL, true),
 (11413, 1, 47, 3, '', 158.00, 245.00, '', NULL, true),
 (11414, 1, 47, 3, '', 72.00, 250.00, '', NULL, true),
+(103415, 1, 47, 7, 'Переход в корпус 10', 98, 65.9, '', NULL, true),
 
 -- ========== КОРПУС 1 (4 этаж, floor_id = 48) ==========
 (11415, 1, 48, 7, 'Лестница', 44.00, 221.00, '', NULL, true),
@@ -799,9 +800,10 @@ INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_te
 (110244, 101009, 102314, 5, '', true),
 (110245, 101010, 11210, 5, '', true),
 (110246, 101012, 11211, 5, '', true),
-(110247, 101016, 11212, 5, '', true)
+(110247, 101016, 11212, 5, '', true),
+(1030353, 11413, 103415, 0.4, '', false)
 ON CONFLICT (id) DO NOTHING;
-
+--============ 1 корпус =============
 INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch) VALUES
 (200015, 101001, '/panoramas/1.1.10.jpg', 'Коридор к лестнице 5', '', 0, 0),
 (200016, 101006, '/panoramas/1.1.2.jpg', 'Банкоматы', '', 0, 0),
