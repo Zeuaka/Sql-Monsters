@@ -75,21 +75,3 @@ INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_te
 (11020026, 1102012, 1102013, 7.42, '', false),
 (11020027, 1102013, 1102014, 2.98, '', false)
 ON CONFLICT (id) DO NOTHING;
-
--- ПАНОРАМЫ
-INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch) VALUES 
-(11990001, 1101010, '11.1.1.jpeg', '11.1.1', '', 0, 0),
-(11990002, 1101014, '11.1.2.jpeg', '11.1.2', '', 0, 0),
-(11990003, 1101007, '11.1.л1.jpeg', '11.1.л1', '', 0, 0),
-(11990004, 1102006, '11.2.1.jpeg', '11.2.1', '', 0, 0),
-(11990005, 1102013, '11.2.2.jpeg', '11.2.2', '', 0, 0),
-(11990006, 1102001, '11.1.л1.jpeg', 'повтор 11.1.л1', '', 0, 0)
-ON CONFLICT (id) DO NOTHING;
-
--- ОБНОВЛЕНИЕ ТОЧЕК (установка panorama_id)
-UPDATE points SET panorama_id = 11990001 WHERE id = 1101010;
-UPDATE points SET panorama_id = 11990002 WHERE id = 1101014;
-UPDATE points SET panorama_id = 11990003 WHERE id = 1101007;
-UPDATE points SET panorama_id = 11990004 WHERE id = 1102006;
-UPDATE points SET panorama_id = 11990005 WHERE id = 1102013;
-UPDATE points SET panorama_id = 11990006 WHERE id = 1102001;
