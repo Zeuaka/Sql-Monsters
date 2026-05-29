@@ -281,3 +281,63 @@ UPDATE points SET panorama_id = 10990012 WHERE id = 1003006;
 UPDATE points SET panorama_id = 10990013 WHERE id = 1003001;
 UPDATE points SET panorama_id = 10990014 WHERE id = 1003002;
 UPDATE points SET panorama_id = 10990015 WHERE id = 1003007;
+
+-- 12 корпус
+-- 1 этаж
+-- ПАНОРАМЫ
+INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch) VALUES 
+(12990001, 1201006, '/panoramas/12.1.1.jpg', 'У лестницы', '', 0, 0),
+(12990002, 1201033, '/panoramas/12.1.2.jpg', 'Коридор', '', 0, 0),
+(12990003, 1201040, '/panoramas/12.1.3.jpg', 'Коридор', '', 0, 0),
+(12990004, 1201044, '/panoramas/12.1.4.jpg', 'Коридор', '', 0, 0),
+(12990005, 1201005, '/panoramas/12.1.л1.jpg', 'Лестница', '', 0, 0),
+(12990006, 1201016, '/panoramas/12.1.л2.jpg', 'Лестница', '', 0, 0)
+ON CONFLICT (id) DO NOTHING;
+
+-- ОБНОВЛЕНИЕ ТОЧЕК (установка panorama_id)
+UPDATE points SET panorama_id = 12990001 WHERE id = 1201006;
+UPDATE points SET panorama_id = 12990002 WHERE id = 1201033;
+UPDATE points SET panorama_id = 12990003 WHERE id = 1201040;
+UPDATE points SET panorama_id = 12990004 WHERE id = 1201044;
+UPDATE points SET panorama_id = 12990005 WHERE id = 1201005;
+UPDATE points SET panorama_id = 12990006 WHERE id = 1201016;
+
+-- 2 этаж
+-- ПАНОРАМЫ
+INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch) VALUES 
+(12990007, 1202004, '/panoramas/12.2.1.jpg', 'Развилка', '', 0, 0),
+(12990008, 1202037, '/panoramas/12.2.2.jpg', 'У лестницы', '', 0, 0),
+(12990009, 1202039, '/panoramas/12.2.3.jpg', 'Холл', '', 0, 0),
+(12990010, 1202044, '/panoramas/12.2.4.jpg', 'Коридор', '', 0, 0),
+(12990011, 1202051, '/panoramas/12.2.5.jpg', 'Коридор у лестницы', '', 0, 0),
+(12990012, 1202058, '/panoramas/12.2.6.jpg', 'Тупик', '', 0, 0),
+(12990013, 1202030, '/panoramas/12.2.л2.jpg', 'Лестница', '', 0, 0),
+(12990014, 1202022, '/panoramas/12.2.л1.jpg', 'Лестница', '', 0, 0)
+ON CONFLICT (id) DO NOTHING;
+
+-- ОБНОВЛЕНИЕ ТОЧЕК (установка panorama_id)
+UPDATE points SET panorama_id = 12990007 WHERE id = 1202004;
+UPDATE points SET panorama_id = 12990008 WHERE id = 1202037;
+UPDATE points SET panorama_id = 12990009 WHERE id = 1202039;
+UPDATE points SET panorama_id = 12990010 WHERE id = 1202044;
+UPDATE points SET panorama_id = 12990011 WHERE id = 1202051;
+UPDATE points SET panorama_id = 12990012 WHERE id = 1202058;
+UPDATE points SET panorama_id = 12990013 WHERE id = 1202030;
+UPDATE points SET panorama_id = 12990014 WHERE id = 1202022;
+
+-- 3 этаж
+-- ПАНОРАМЫ
+INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch) VALUES 
+(12990015, 1203004, '/panoramas/12.3.1.jpg', 'Развилка', '', 0, 0),
+(12990016, 1203035, '/panoramas/12.2.2.jpg', 'У лестницы', '', 0, 0),
+(12990017, 1203037, '/panoramas/12.2.3.jpg', 'Коридор', '', 0, 0),
+(12990018, 1203043, '/panoramas/12.2.4.jpg', 'Коридор', '', 0, 0),
+(12990019, 1203050, '/panoramas/12.2.5.jpg', 'Тупик', '', 0, 0)
+ON CONFLICT (id) DO NOTHING;
+
+-- ОБНОВЛЕНИЕ ТОЧЕК (установка panorama_id)
+UPDATE points SET panorama_id = 12990015 WHERE id = 1203004;
+UPDATE points SET panorama_id = 12990016 WHERE id = 1203035;
+UPDATE points SET panorama_id = 12990017 WHERE id = 1203037;
+UPDATE points SET panorama_id = 12990018 WHERE id = 1203043;
+UPDATE points SET panorama_id = 12990019 WHERE id = 1203050;
