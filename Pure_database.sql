@@ -135,7 +135,6 @@ INSERT INTO floors (id, building_id, floor_number, floor_plan_url) VALUES
 (14, 5, 3, '/floorplans/5_3.svg'),
 
 -- Корпус 6
-(15, 6, 0, '/floorplans/6_0.svg'),
 (16, 6, 1, '/floorplans/6_1.svg'),
 (17, 6, 2, '/floorplans/6_2.svg'),
 (18, 6, 3, '/floorplans/6_3.svg'),
