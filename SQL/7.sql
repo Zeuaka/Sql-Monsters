@@ -229,4 +229,5 @@ INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_te
 (714010, 72046, 702135, 5, '', true),
 (714011, 702135, 703009, 5, '', true),
 (714012, 704006, 703009, 5, '', true),
-(714013, 704008, 703008, 5, '', true);
+(714013, 704008, 703008, 5, '', true)
+ON CONFLICT (id) DO NOTHING;
