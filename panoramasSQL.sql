@@ -341,3 +341,22 @@ UPDATE points SET panorama_id = 12990016 WHERE id = 1203035;
 UPDATE points SET panorama_id = 12990017 WHERE id = 1203037;
 UPDATE points SET panorama_id = 12990018 WHERE id = 1203043;
 UPDATE points SET panorama_id = 12990019 WHERE id = 1203050;
+
+--=============== 11 корпус =============
+-- ПАНОРАМЫ
+INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch) VALUES 
+(11990001, 1101010, '11.1.1.jpeg', '11.1.1', '', 0, 0),
+(11990002, 1101014, '11.1.2.jpeg', '11.1.2', '', 0, 0),
+(11990003, 1101007, '11.1.л1.jpeg', '11.1.л1', '', 0, 0),
+(11990004, 1102006, '11.2.1.jpeg', '11.2.1', '', 0, 0),
+(11990005, 1102013, '11.2.2.jpeg', '11.2.2', '', 0, 0),
+(11990006, 1102001, '11.1.л1.jpeg', 'повтор 11.1.л1', '', 0, 0)
+ON CONFLICT (id) DO NOTHING;
+
+-- ОБНОВЛЕНИЕ ТОЧЕК (установка panorama_id)
+UPDATE points SET panorama_id = 11990001 WHERE id = 1101010;
+UPDATE points SET panorama_id = 11990002 WHERE id = 1101014;
+UPDATE points SET panorama_id = 11990003 WHERE id = 1101007;
+UPDATE points SET panorama_id = 11990004 WHERE id = 1102006;
+UPDATE points SET panorama_id = 11990005 WHERE id = 1102013;
+UPDATE points SET panorama_id = 11990006 WHERE id = 1102001;
