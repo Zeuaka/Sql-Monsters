@@ -493,6 +493,7 @@ INSERT INTO points (id, building_id, floor_id, type, name, x_coord, y_coord, des
 (11412, 1, 47, 3, '', 148.00, 246.00, '', NULL, true),
 (11413, 1, 47, 3, '', 158.00, 245.00, '', NULL, true),
 (11414, 1, 47, 3, '', 72.00, 250.00, '', NULL, true),
+(103415, 1, 47, 7, 'Переход в 10', 98.5, 66, '', NULL, true),
 
 -- ========== КОРПУС 1 (4 этаж, floor_id = 48) ==========
 (11415, 1, 48, 7, 'Лестница', 44.00, 221.00, '', NULL, true),
@@ -988,7 +989,9 @@ INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_te
 (110244, 101009, 102314, 5, '', true),
 (110245, 101010, 11210, 5, '', true),
 (110246, 101012, 11211, 5, '', true),
-(110247, 101016, 11212, 5, '', true)
+(110247, 101016, 11212, 5, '', true),
+-- ребро к переходу на 3 этаже
+(1030353, 11413, 103415, 0.48, '', false)
 ON CONFLICT (id) DO NOTHING;
 -- 2 корпус --
 -- === 1 этаж ===
@@ -3980,7 +3983,8 @@ INSERT INTO points (id, building_id, floor_id, type, name, x_coord, y_coord, des
 (1102004, 11, 37, 1, 'Аудитория 220(11)', 74, 32, '', NULL, true),
 (1102003, 11, 37, 3, '', 74.29, 35.19, '', NULL, true),
 (1102002, 11, 37, 3, '', 90.5, 35.5, '', NULL, true),
-(1102001, 11, 37, 6, 'лестница 2 этаж(11)', 90.5, 21, '', NULL, true)
+(1102001, 11, 37, 6, 'лестница 2 этаж(11)', 90.5, 21, '', NULL, true),
+(1102015, 11, 37, 7, 'Переход из 11 в 9 корпус', 41.77, 12.5, '', NULL, true)
 ON CONFLICT (id) DO NOTHING;
 
 -- 11 1 этаж ребро
@@ -4016,7 +4020,8 @@ INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_te
 (11020024, 1102007, 1102008, 0.62, '', false),
 (11020025, 1102012, 1102011, 0.75, '', false),
 (11020026, 1102012, 1102013, 7.42, '', false),
-(11020027, 1102013, 1102014, 2.98, '', false)
+(11020027, 1102013, 1102014, 2.98, '', false),
+(11020028, 1102007, 1102015, 2.17, '', false)
 ON CONFLICT (id) DO NOTHING;
 -- =====================================================
 -- 12 КОРПУС
@@ -4950,5 +4955,27 @@ INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_te
 (715017, 101997, 801060, 60, '', true),
 (715021, 802001, 602007, 25, '', true),
 (1011000, 101002, 1202099, 5, '', true),
-(16050086, 1602073, 11289, 0.1, '', true)
+(16050086, 1602073, 11289, 0.1, '', true),
+(1030354, 103415, 1003012, 20, '', true),
+(11020029, 1102015, 902014, 20, '', true)
 ON CONFLICT (id) DO NOTHING;
+
+-- скрипт для проверки связей переходов
+SELECT 
+    e.id AS edge_id,
+    e.from_point_id,
+    p_from.name AS from_point_name,
+    p_from.building_id AS from_building,
+    p_from.floor_id AS from_floor,
+    e.to_point_id,
+    p_to.name AS to_point_name,
+    p_to.building_id AS to_building,
+    p_to.floor_id AS to_floor,
+    e.distance_meters,
+    e.floor_transition,
+    e.direction_text
+FROM edges e
+LEFT JOIN points p_from ON e.from_point_id = p_from.id
+LEFT JOIN points p_to ON e.to_point_id = p_to.id
+WHERE e.from_point_id = 1102015 OR e.to_point_id = 1102015
+ORDER BY e.id;
