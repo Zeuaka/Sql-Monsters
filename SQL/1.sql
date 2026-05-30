@@ -393,7 +393,7 @@ INSERT INTO points (id, building_id, floor_id, type, name, x_coord, y_coord, des
 (11492, 1, 48, 3, '', 103.00, 105.00, '', NULL, true),
 (11493, 1, 48, 3, '', 133.00, 105.00, '', NULL, true),
 (11494, 1, 48, 3, '', 147.00, 105.00, '', NULL, true),
-(11495, 1, 48, 3, '', 156.00, 105.00, '', NULL, true)
+(11495, 1, 48, 3, '', 156.00, 105.00, '', NULL, true),
 ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_text, floor_transition) VALUES
