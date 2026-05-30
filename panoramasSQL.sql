@@ -731,3 +731,37 @@ ON CONFLICT (id) DO NOTHING;
 UPDATE points SET panorama_id = 3990012 WHERE id = 303002;
 UPDATE points SET panorama_id = 3990013 WHERE id = 303011;
 UPDATE points SET panorama_id = 3990014 WHERE id = 303021;
+
+-- ================ 4 корпус =============
+-- 1 этаж
+-- ПАНОРАМЫ
+INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch) VALUES 
+(4990002, 401002, '/panoramas/4.1.2.jpg', 'Коридор', '', 0, 0),
+(4990003, 401001, '/panoramas/4.1.1.jpg', 'Холл', '', 0, 0),
+(4990004, 401003, '/panoramas/4.1.3.jpg', 'Поворот', '', 0, 0),
+(4990005, 401004, '/panoramas/4.1.л1.jpg', 'Лестница', '', 0, 0),
+(4990006, 401005, '/panoramas/4.1.л2.jpg', 'Лестница', '', 0, 0)
+ON CONFLICT (id) DO NOTHING;
+
+-- ОБНОВЛЕНИЕ ТОЧЕК (установка panorama_id)
+UPDATE points SET panorama_id = 4990002 WHERE id = 401002;
+UPDATE points SET panorama_id = 4990003 WHERE id = 401001;
+UPDATE points SET panorama_id = 4990004 WHERE id = 401003;
+UPDATE points SET panorama_id = 4990005 WHERE id = 401004;
+UPDATE points SET panorama_id = 4990006 WHERE id = 401005;
+-- 2 этаж
+-- ПАНОРАМЫ
+INSERT INTO panoramas (id, point_id, image_path, title, description, yaw, pitch) VALUES 
+(4990007, 402002, '/panoramas/4.2.1.jpg', 'Поворот', '', 0, 0),
+(4990008, 402003, '/panoramas/4.2.2.jpg', 'Коридор', '', 0, 0),
+(4990009, 402004, '/panoramas/4.2.3.jpg', 'Поворот', '', 0, 0),
+(4990010, 402011, '/panoramas/4.2.л2.jpg', 'Лестница', '', 0, 0),
+(4990011, 402001, '/panoramas/4.2.л1.jpg', 'Лестница', '', 0, 0)
+ON CONFLICT (id) DO NOTHING;
+
+-- ОБНОВЛЕНИЕ ТОЧЕК (установка panorama_id)
+UPDATE points SET panorama_id = 4990007 WHERE id = 402002;
+UPDATE points SET panorama_id = 4990008 WHERE id = 402003;
+UPDATE points SET panorama_id = 4990009 WHERE id = 402004;
+UPDATE points SET panorama_id = 4990010 WHERE id = 402011;
+UPDATE points SET panorama_id = 4990011 WHERE id = 402001;
