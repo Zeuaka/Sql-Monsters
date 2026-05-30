@@ -5,5 +5,7 @@ INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_te
 (715017, 101997, 801060, 60, '', true),
 (715021, 802001, 602007, 25, '', true),
 (1011000, 101002, 1202099, 5, '', true),
-(16050086, 1602073, 11289, 0.1, '', true)
+(16050086, 1602073, 11289, 0.1, '', true),
+(1030354, 103415, 1003012, 20, '', true),
+(11020029, 1102015, 902014, 20, '', true)
 ON CONFLICT (id) DO NOTHING;
