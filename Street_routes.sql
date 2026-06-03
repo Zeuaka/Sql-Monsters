@@ -26,3 +26,27 @@ INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_te
 --в 9 к
 (8010067, 801030, 901007, 300, '', false)
 ON CONFLICT (id) DO NOTHING;
+
+
+-- Улица 7 корпус
+-- РЁБРА
+INSERT INTO edges (id, from_point_id, to_point_id, distance_meters, direction_text, floor_transition) VALUES
+-- в 6 корпус 
+(7010142, 72023, 601019, 60, '', false),
+-- в 1 корпус
+(7010143, 72023, 101085, 200, '', false),
+-- в 12 корпус
+(7010144, 72023, 1201004, 500, '', false),
+-- в 16 корпус
+(7010142, 72023, 1601001, 250, '', false),
+-- в 2 корпус
+(7010143, 72023, 201062, 300, '', false),
+-- в 3 корпус
+(7010144, 72023, 301020, 350, '', false),
+-- в 10 корпус
+(7010142, 72023, 1001001, 400, '', false),
+-- в 9 корпус
+(7010143, 72023, 901007, 400, '', false),
+-- в 4 корпус
+(7010144, 72023, 401009, 350, '', false)
+ON CONFLICT (id) DO NOTHING;
